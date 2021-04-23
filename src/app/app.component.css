@@ -1,0 +1,24 @@
+/* .formstyle{
+    margin-top: 1cm;
+}
+.formfield{
+
+}
+
+.container{
+    margin-top: 10%;
+    max-width: 40%;
+    max-height: 50%;
+    background-color: darkgoldenrod;
+    text-justify: auto;
+    border-collapse:initial;
+}  */
+.container{
+    background-color:#fff;
+    border: 2px solid rgb(28, 110, 165);
+    margin-top:3px;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    height: 100vh;
+}

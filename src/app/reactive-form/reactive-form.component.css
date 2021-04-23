@@ -1,0 +1,9 @@
+.container{
+    background-color:#fff;
+    border: 2px solid rgb(28, 110, 165);
+    margin-top:3px;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    height: 100vh;
+}
