@@ -94,20 +94,22 @@
     
         <div class="form-group"> <!-- Full Name -->
             <label for="full_name_id" class="control-label">Full Name</label>
-            <input required type="text" class="form-control" id="full_name_id" name="name"  #name="ngModel" [(ngModel)]="username" [class.is-invalid]="name.invalid && name.touched">
+            <input required type="text" class="form-control" id="full_name_id" #name="ngModel" name="name"  [(ngModel)]="username" [class.is-invalid]="name.invalid && name.touched">
             <small *ngIf="name.invalid && name.touched">Name is required</small>
         </div>
     
         <div class="form-group"> <!-- Full Name -->
             <label for="email" class="control-label">Email</label>
-            <input type="email" class="form-control" id="full_name_id" #mail="ngModel" name ="Email" [(ngModel)]="mail"  required [class.-is-invalid]="mail.invalid && mail.touched" >
-            <small *ngIf="mail.invalid && mail.touched">Email is required</small>
-            {{mail.invalid}}
+            <input type="email" class="form-control" id="full_name_id" #email="ngModel" name ="Email" [(ngModel)]="mail"  required [class.is-invalid]="email.invalid && email.touched" >
+            <small *ngIf="email.invalid && email.touched">Email Can't be empty</small>
+            {{email.invalid}}
+
         </div>	
     
         <div class="form-group"> <!-- Full Name -->
             <label for="full_name_id" class="control-label">Phone</label>
-            <input type="text" class="form-control" id="full_name_id" name="mob" #mob="ngModel" [(ngModel)]="mob" minlength="4" required [class.is-invalid]="mob.invalid && mob.touched">
+            <input type="text" class="form-control" id="full_name_id" #mobile="ngModel" name="mob" [(ngModel)]="mob" minlength="4" required [class.is-invalid]="mobile.invalid && mobile.touched">
+            <small *ngIf="mobile.invalid && mobile.touched">Mobile is required</small>
         </div>	
     
         <div class="form-group"> <!-- Street 1 -->
