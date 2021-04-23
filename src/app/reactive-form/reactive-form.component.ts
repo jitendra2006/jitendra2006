@@ -20,23 +20,16 @@ phone="1234567890";
 address="Random";
 result:any=[];
 onSubmit(form:any){
-  console.log(form)
-  console.log(form.value);
-  this.service.setData(form.value).
-  subscribe(param=>{
-    console.log(param)
-  })
-
 
 }
 
-getData(){
-  this.service.getData().subscribe(param=>{
-    console.log(param)
-    this.result = param;
+// getData(){
+//   this.service.getData().subscribe(param=>{
+//     console.log(param)
+//     this.result = param;
     
-  })
-}
+//   })
+// }
 
 
 

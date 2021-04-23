@@ -1,60 +1,194 @@
-<h1>Works</h1>
+<div class="container">
+    <form #technology="ngForm">
+        
+        </form>
 
-<div style="max-width: 50%;margin-left: 30%; margin-top:10%;" class="text-center formstyle">
+<div class="card">
+    <div class="card-header"><h3 class="text-info text-center text-capitalize">Participation Form</h3></div>
+    <div class="card-body">
+        
+<div>
+    <!-- {{form.value|json}} -->
 
-<form >
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <h3 class="text-center text-info">I'd Like to learn About Following</h3>
+        <div class="row">
+            <div class="col" style="text-align:left;margin-left: 3cm;">
+              <!-- Default unchecked -->
+            <div class="custom-control custom-checkbox">
+                 <input type="checkbox" class="custom-control-input" id="1" name="html" [(ngModel)]="html" value="HTML">
+                 <label class="custom-control-label" for="1">HTML</label>
+            </div>
+            {{html}}
+        
+            
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="2" name="css" ngModel value="css">
+              <label class="custom-control-label" for="2">CSS</label>
+         </div>
+        
+         
+         <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="3" name="javascript" ngModel>
+          <label class="custom-control-label" for="3">JavaScript</label>
+        </div>
+        
+        
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="4" name="database" ngModel>
+          <label class="custom-control-label" for="4">Database</label>
+        </div>
+        
+        
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="5" name="ruby" ngModel>
+          <label class="custom-control-label" for="5">Ruby on Rails</label>
+        </div>
+        
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="6" name="devops" ngModel>
+          <label class="custom-control-label" for="6">DevOps</label>
+        </div>
+            </div>
+            <div class="col" style="text-align:left;">
+        
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="7" ngModel name="php">
+                <label class="custom-control-label" for="7">PHP</label>
+           </div>
+           
+           <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="8" ngModel name="python">
+            <label class="custom-control-label" for="8">Python(Django)</label>
+        </div>
+        
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="9" ngModel name="Wordpress">
+          <label class="custom-control-label" for="9">Wordpress</label>
+        </div>
+        
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="10" ngModel name="security">
+          <label class="custom-control-label" for="10">Web Security</label>
+        </div>
+<!--         
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="11" ngModel name="">
+          <label class="custom-control-label" for="11">HTML</label>
+        </div> -->
+<!--         
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="12">
+          <label class="custom-control-label" for="12">HTML</label>
+        </div>
+         -->
+        
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="13">
+          <label class="custom-control-label" for="13">Other</label>
+        </div>
+        
+            </div>
+        
+          </div>
+    
+        <div class="form-group"> <!-- Full Name -->
+            <label for="full_name_id" class="control-label">Full Name</label>
+            <input required type="text" class="form-control" id="full_name_id" name="name"  #name="ngModel" [(ngModel)]="username" [class.is-invalid]="name.invalid && name.touched">
+            <small *ngIf="name.invalid && name.touched">Name is required</small>
+        </div>
+    
+        <div class="form-group"> <!-- Full Name -->
+            <label for="email" class="control-label">Email</label>
+            <input type="email" class="form-control" id="full_name_id" #mail="ngModel" name ="Email" [(ngModel)]="mail"  required [class.-is-invalid]="mail.invalid && mail.touched" >
+            <small *ngIf="mail.invalid && mail.touched">Email is required</small>
+            {{mail.invalid}}
+        </div>	
+    
+        <div class="form-group"> <!-- Full Name -->
+            <label for="full_name_id" class="control-label">Phone</label>
+            <input type="text" class="form-control" id="full_name_id" name="mob" #mob="ngModel" [(ngModel)]="mob" minlength="4" required [class.is-invalid]="mob.invalid && mob.touched">
+        </div>	
+    
+        <div class="form-group"> <!-- Street 1 -->
+            <label for="street1_id" class="control-label">Street Address 1</label>
+            <input type="text" class="form-control" id="street1_id"  name="street" [(ngModel)]="street">
+        </div>					
+                                
+        <div class="form-group"> <!-- Street 2 -->
+            <label for="street2_id" class="control-label">Street Address 2</label>
+            <input type="text" class="form-control" id="street2_id"name="street2" [(ngModel)]="street2">
+        </div>	
+    
+        <div class="form-group"> <!-- City-->
+            <label for="city_id" class="control-label">City</label>
+            <input type="text" class="form-control" id="city_id" name="city" [(ngModel)]="city">
+        </div>									
+                                
+        
+        <div class="form-group"> <!-- Zip Code-->
+            <label for="zip_id" class="control-label">Zip Code</label>
+            <input type="text" class="form-control" id="zip_id" name="zip" [(ngModel)]="zip">
+        </div>
+        <hr>
+        
+        <div style=" margin-top: 1cm;padding:10px 10px 10px 10px; background-color: green;box-shadow: 10px 10px 10px 10px black;">
+            <h2 class="text-info text-center">Payment Information</h2>
+        </div>
 
-	<div class="form-group"> <!-- Full Name -->
-		<label for="full_name_id" class="control-label">Full Name</label>
-		<input type="text" class="form-control" id="full_name_id" name="full_name" >
-	</div>	
+        <div style="margin-top:2cm;"> <h4 class="text-center text-info">WorkShop Date</h4></div>
+        <div class="row" >
+          
 
-    <div class="form-group"> <!-- Full Name -->
-		<label for="email" class="control-label">Email</label>
-		<input type="text" class="form-control" id="full_name_id" name="email" required>
-	</div>	
+            <div class="col">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="p1" [(ngModel)]="timeslot" name="may1_3">
+                    <label class="custom-control-label" for="p1">May 1-3</label>
+               </div>
 
-    <div class="form-group"> <!-- Full Name -->
-		<label for="full_name_id" class="control-label">Full Name</label>
-		<input type="text" class="form-control" id="full_name_id" name="full_name">
-	</div>	
+               <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="p2" [(ngModel)]="timeslot" name="may1_3">
+                <label class="custom-control-label" for="p2">June 1-3</label>
+           </div>
 
-	<div class="form-group"> <!-- Street 1 -->
-		<label for="street1_id" class="control-label">Street Address 1</label>
-		<input type="text" class="form-control" id="street1_id" name="street1">
-	</div>					
-							
-	<div class="form-group"> <!-- Street 2 -->
-		<label for="street2_id" class="control-label">Street Address 2</label>
-		<input type="text" class="form-control" id="street2_id" name="street2">
-	</div>	
+           <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="p3" ngModel name="may2">
+            <label class="custom-control-label" for="p3">July 1-3</label>
+       </div>
+            </div>
+            <div class="col">
 
-	<div class="form-group"> <!-- City-->
-		<label for="city_id" class="control-label">City</label>
-		<input type="text" class="form-control" id="city_id" name="city">
-	</div>									
-							
-	
-	<div class="form-group"> <!-- Zip Code-->
-		<label for="zip_id" class="control-label">Zip Code</label>
-		<input type="text" class="form-control" id="zip_id" name="zip">
-	</div>		
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="p4" ngModel name="may3">
+                    <label class="custom-control-label" for="p4">May 15-18</label>
+               </div>
 
-    <div>
-        <select name="" id="">
-            <option value="Credit Card">Credit Card</option>
-            <option value="Debit Card">Debit card</option>
-            <option value="Emi">EMI</option>
-        </select>
+               <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="p5" ngModel name="may4">
+                <label class="custom-control-label" for="p5">June 15-18</label>
+           </div>
+
+           <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="p6" ngModel name="may5">
+            <label class="custom-control-label" for="p6">July 15-18</label>
+       </div>
+            </div>
+        </div>
+    
+       <div style="margin-top: 1cm;">
+        <label for="">Payment Method</label>
+            <select  class="custom-select" name="payment" id="" [(ngModel)]="choice">
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit card</option>
+                <option value="Emi">EMI</option>
+            </select>
+        </div>
+        <div style="margin-top:.2cm ;text-align: center;">
+            <button class="btn btn-primary justify-content-center">Submit</button>
+        </div>
+        
+
+    </form>
     </div>
-	
-    <button class="btn btn-primary">Submit</button>
-	   
-	
-</form>
-
-
-
-
-
+</div>    
 </div>
